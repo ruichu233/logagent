@@ -1,0 +1,29 @@
+# kafka配置
+kafka:
+ brokers: [127.0.0.1:9091,] # kafka集群地址
+ timeout: 5s
+ writer:
+  max-attempts: 3
+  require-ack: -1
+  async: true
+  batch-size: 100
+  batch-timeout: 5s
+  batch-bytes: 1048576
+ reader:
+
+tail-file:
+ location:
+  offset: 0
+  whence: 2
+ reopen: true
+ must-exist: false
+ poll: true
+ follow: true
+
+
+# etcd配置
+etcd:
+ endpoints: [127.0.0.1:20000,127.0.0.1:20002,127.0.0.1:20004]
+ dial-timeout: 5s
+
+buffer-size: 1000

@@ -1,0 +1,11 @@
+kafka:
+  brokers: [127.0.0.1:9091,] # kafka集群地址
+  topic: "web_log"
+  reader:
+    group-id: "web_log_consumer"
+
+es:
+  addresses: [http://127.0.0.1:9200,]
+
+index: "web"
+buffer-size: 10000
